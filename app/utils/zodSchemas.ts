@@ -14,7 +14,7 @@ export const companySchema = z.object({
 export const jobSeekerSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   about: z.string().min(10, "Please provide more information about yourself"),
-  resume: z.string().optional(),
+  resume: z.string().min(1, "Resume URL is required"),
 });
 
 export const jobSchema = z.object({
@@ -27,7 +27,7 @@ export const jobSchema = z.object({
   benefits: z.array(z.string()).min(1, "Please select at least one benefit"),
   companyName: z.string().min(1, "Company name is required"),
   companyLocation: z.string().min(1, "Company location is required"),
-  companyLogo: z.string().optional(),
+  companyLogo: z.string().min(1, "Logo URL is required"),
   companyWebsite: z.string().min(1, "Company website is required"),
   companyXAccount: z.string().optional(),
   companyDescription: z.string().min(1, "Company description is required"),
