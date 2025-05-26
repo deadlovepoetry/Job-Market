@@ -204,7 +204,7 @@ export default function CompanyForm() {
                     <UploadDropzone
                       endpoint="imageUploader"
                       onClientUploadComplete={(res) => {
-                        field.onChange(res[0].ufsUrl);
+                        field.onChange(res[0].url);
                         toast.success("Logo uploaded successfully!");
                       }}
                       onUploadError={() => {
