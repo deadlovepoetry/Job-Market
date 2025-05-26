@@ -6,7 +6,7 @@ export const companySchema = z.object({
   about: z
     .string()
     .min(10, "Please provide more information about your company"),
-  logo: z.string().optional(),
+  logo: z.string().min(1, "Resume URL is required"),
   website: z.string().url("Please enter a valid website URL"),
   xAccount: z.string().optional(),
 });
